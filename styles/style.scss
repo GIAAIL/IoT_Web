@@ -1,0 +1,27 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  min-height: 100vh;
+  //   background-image: url(https://picsum.photos/id/235/1920/1080);
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  background-color: #081223;
+}
+
+.navbar {
+  height: 4rem;
+}
+
+.container {
+  padding: 5rem;
+  .searchBar {
+    h1 {
+      font-weight: 100;
+      font-size: 3rem;
+    }
+  }
+}
