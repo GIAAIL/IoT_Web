@@ -1,4 +1,5 @@
-const initialURL = "http://localhost:3000/devices";
+const localURL = "http://localhost:3000/devices";
+const herokuURL = "https://iotapinodejs.herokuapp.com/devices";
 const sercheURL = "";
 
 // const dataFetch = async () => {
@@ -15,7 +16,7 @@ let weather = document.querySelector(".weather");
 
 const btn = document.querySelector("#getDataBtn");
 btn.addEventListener("click", async () => {
-  const dataFetch = await fetch(initialURL);
+  const dataFetch = await fetch(herokuURL);
   let parsedData = await dataFetch.json();
   console.log(parsedData);
   let dataCount = parsedData.length;
