@@ -41,9 +41,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto gap-3">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./index.html"
-                >Home</a
-              >
+              <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./devices.html">Devices</a>
@@ -62,7 +60,46 @@
     <div class="container d-flex justify-content-center align-items-center">
       <div class="row">
         <div class="col">
-          <h1 class="">Welcome to IoT.Web</h1>
+          <form
+            action="https://iotapinodejs.herokuapp.com/devices"
+            method="post"
+          >
+            <div class="mb-3">
+              <label for="name" class="form-label">Device Name</label>
+              <input
+                name="name"
+                placeholder="Pleas input device name"
+                type="text"
+                class="form-control"
+                id="inputDeviceName"
+                aria-describedby="deviceNameHelp"
+              />
+              <div id="emailHelp" class="form-text">ex: IoT_12.</div>
+            </div>
+            <div class="mb-3">
+              <label for="id" class="form-label">ID</label>
+              <input
+                name="id"
+                id="inputDeviceId"
+                placeholder="Pleas input device ID"
+                type="text"
+                class="form-control"
+                aria-describedby="deviceIdHelp"
+              />
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1"
+                >Check me out</label
+              >
+            </div>
+            <button type="submit" class="btn btn-primary">Post device</button>
+          </form>
+          <script src="./form.js"></script>
         </div>
       </div>
     </div>
