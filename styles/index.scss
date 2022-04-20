@@ -6,7 +6,8 @@
 }
 body {
   min-height: 100vh;
-  background-image: url(https://picsum.photos/id/302/1920/1080);
+  background-image: url(../assets/images/3452280.jpg);
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #081223;
@@ -18,9 +19,9 @@ body {
 .container {
   height: calc(100vh - 4rem);
   h1 {
-    color: #464646;
+    color: #ffff61;
     font-size: 4rem;
     letter-spacing: 0.8rem;
-    font-weight: 300;
+    font-weight: 700;
   }
 }
