@@ -18,7 +18,7 @@ async function postFormDataAsJson({ url, formData }) {
     const errorMessage = await response.text();
     throw new Error(errorMessage);
   }
-
+  document.getElementById("postForm").reset();
   return response.json();
 }
 
@@ -31,7 +31,6 @@ async function handleFormSubmit(event) {
   try {
     const formData = new FormData(form);
     const responseData = await postFormDataAsJson({ url, formData });
-
     console.log({ responseData });
   } catch (error) {
     console.error(error);
