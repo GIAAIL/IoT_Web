@@ -1,3 +1,7 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 .fontWhite {
   color: aliceblue;
   font-weight: 500;
@@ -10,5 +14,25 @@
 .btn-primary {
   background-color: #ff00f7;
   border: none !important;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 0.7rem !important;
+  color: #a4a4a4 !important;
+}
+
+input:-ms-input-placeholder {
+  font-size: 0.7rem !important;
+  color: #a4a4a4 !important;
+}
+
+input::-ms-input-placeholder {
+  font-size: 0.7rem !important;
+  color: #a4a4a4 !important;
+}
+
+input::placeholder {
+  font-size: 0.7rem !important;
+  color: #a4a4a4 !important;
 }
 /*# sourceMappingURL=post.css.map */

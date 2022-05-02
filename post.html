@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,800&display=swap"
       rel="stylesheet"
     />
     <title>GIAAIL_IoT</title>
@@ -47,9 +47,6 @@
             <li class="nav-item">
               <a class="nav-link" href="./devices.html">Devices</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Details</a>
-            </li>
             <li class="nav-item pe-3">
               <a class="nav-link" href="./post.html">Post</a>
             </li>
@@ -64,7 +61,19 @@
           <form
             action="https://iotapinodejs.herokuapp.com/devices"
             method="post"
+            id="postForm"
           >
+            <div class="mb-3">
+              <label for="id" class="form-label fontWhite">ID</label>
+              <input
+                name="id"
+                id="inputDeviceId"
+                placeholder="Pleas input device ID"
+                type="text"
+                class="form-control"
+                aria-describedby="deviceIdHelp"
+              />
+            </div>
             <div class="mb-3">
               <label for="name" class="form-label fontWhite">Device Name</label>
               <input
@@ -75,17 +84,42 @@
                 id="inputDeviceName"
                 aria-describedby="deviceNameHelp"
               />
-              <div id="emailHelp" class="form-text">ex: IoT_12.</div>
             </div>
             <div class="mb-3">
-              <label for="id" class="form-label fontWhite">ID</label>
+              <label for="Humidity" class="form-label fontWhite"
+                >Humidity</label
+              >
               <input
-                name="id"
-                id="inputDeviceId"
-                placeholder="Pleas input device ID"
+                name="Humidity"
+                placeholder="Input Humidity"
                 type="text"
                 class="form-control"
-                aria-describedby="deviceIdHelp"
+                id="inputHumidity"
+                aria-describedby="deviceHumidityHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Temperature" class="form-label fontWhite"
+                >Temperature</label
+              >
+              <input
+                name="Temperature"
+                placeholder="Pleas input Temperature"
+                type="text"
+                class="form-control"
+                id="inputTemperature"
+                aria-describedby="temperatureHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Weather" class="form-label fontWhite">Weather</label>
+              <input
+                name="Weather"
+                placeholder="Pleas input device name"
+                type="text"
+                class="form-control"
+                id="inputWeather"
+                aria-describedby="deviceWeather"
               />
             </div>
             <div class="mb-3 form-check">

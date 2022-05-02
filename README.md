@@ -9,5 +9,6 @@ The **link** below is the pages for clients !!!
 ###Go check it:  
 https://chunyulo-code.github.io/IoT_Web/
 
-![homepage](./assets/images/homepage.png)
-![Devices](./assets/images/datas.png)
+![Homepage](./assets/images/Demo_01.png)
+![PostDevice](./assets/images/Demo_02.png)
+![Devices](./assets/images/Demo_03.png)
