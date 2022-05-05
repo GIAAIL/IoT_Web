@@ -58,6 +58,8 @@ nav {
   font-size: 7rem;
   letter-spacing: 0.8rem;
   font-weight: 700;
+  -webkit-animation: 0.5s mainText ease-in-out;
+          animation: 0.5s mainText ease-in-out;
 }
 
 .container h1 span {
@@ -76,5 +78,75 @@ nav {
   font-size: 1.5rem;
   letter-spacing: 0.8rem;
   font-weight: 100;
+}
+
+.container button {
+  -webkit-animation: 0.5s btn ease-in-out;
+          animation: 0.5s btn ease-in-out;
+}
+
+.container button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@-webkit-keyframes mainText {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  50% {
+    -webkit-transform: scaleX(1.2);
+            transform: scaleX(1.2);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes mainText {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  50% {
+    -webkit-transform: scaleX(1.2);
+            transform: scaleX(1.2);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes btn {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  50% {
+    -webkit-transform: scaleY(1.4);
+            transform: scaleY(1.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes btn {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  50% {
+    -webkit-transform: scaleY(1.4);
+            transform: scaleY(1.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
 }
 /*# sourceMappingURL=index.css.map */
