@@ -85,11 +85,6 @@ nav {
           animation: 0.5s btn ease-in-out;
 }
 
-.container button a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
 @-webkit-keyframes mainText {
   0% {
     -webkit-transform: scaleX(0);
