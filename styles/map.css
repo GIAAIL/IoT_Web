@@ -1,0 +1,30 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(../assets/images/architecture-1868667_1920.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #081223;
+}
+
+nav {
+  font-weight: 100;
+  letter-spacing: 0.15rem;
+}
+
+.navbar {
+  height: 4rem;
+}
+
+#map {
+  width: 100vw;
+  height: calc(100vh - 64px);
+}
+/*# sourceMappingURL=map.css.map */
