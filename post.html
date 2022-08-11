@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col">
           <form
-            action="https://iotapinodejs.herokuapp.com/devices"
+            action="https://us-central1-iot-cloud-functions-a3398.cloudfunctions.net/post/"
             method="post"
             id="postForm"
           >
@@ -78,9 +78,9 @@
               />
             </div>
             <div class="mb-3">
-              <label for="name" class="form-label fontWhite">Device Name</label>
+              <label for="deviceName" class="form-label fontWhite">Device Name</label>
               <input
-                name="name"
+                name="deviceName"
                 placeholder="Pleas input device name"
                 type="text"
                 class="form-control"
@@ -88,25 +88,13 @@
                 aria-describedby="deviceNameHelp"
               />
             </div>
+            
             <div class="mb-3">
-              <label for="Humidity" class="form-label fontWhite"
-                >Humidity</label
-              >
-              <input
-                name="Humidity"
-                placeholder="Input Humidity"
-                type="text"
-                class="form-control"
-                id="inputHumidity"
-                aria-describedby="deviceHumidityHelp"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="Temperature" class="form-label fontWhite"
+              <label for="temp" class="form-label fontWhite"
                 >Temperature</label
               >
               <input
-                name="Temperature"
+                name="temp"
                 placeholder="Pleas input Temperature"
                 type="text"
                 class="form-control"
@@ -115,9 +103,9 @@
               />
             </div>
             <div class="mb-3">
-              <label for="Weather" class="form-label fontWhite">Weather</label>
+              <label for="event" class="form-label fontWhite">Weather</label>
               <input
-                name="Weather"
+                name="event"
                 placeholder="Pleas input device name"
                 type="text"
                 class="form-control"

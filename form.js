@@ -1,3 +1,7 @@
+const postForm = document.getElementById("postForm");
+postForm.addEventListener("submit", handleFormSubmit);
+
+
 async function postFormDataAsJson({ url, formData }) {
   const plainFormData = Object.fromEntries(formData.entries());
   const formDataJsonString = JSON.stringify(plainFormData);
@@ -37,5 +41,4 @@ async function handleFormSubmit(event) {
   }
 }
 
-const postForm = document.getElementById("postForm");
-postForm.addEventListener("submit", handleFormSubmit);
+

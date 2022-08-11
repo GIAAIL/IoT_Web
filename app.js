@@ -1,35 +1,37 @@
 const localURL = "http://localhost:3000/devices";
 const herokuURL = "https://iotapinodejs.herokuapp.com/devices";
-const sercheURL = "";
+const fireBaseURL = "https://us-central1-iot-cloud-functions-a3398.cloudfunctions.net/post/"
 
 // const dataFetch = async () => {
 //   const dataFetch = await fetch(initialURL);
 //   let parsedData = await dataFetch.json();
 //   console.log(parsedData);
 // };
-let devicesBox = document.getElementById("devicesBox");
 
-let iotName = document.querySelector(".iotName");
-let humidity = document.querySelector(".humidity");
-let temp = document.querySelector(".temp");
-let weather = document.querySelector(".weather");
+// let devicesBox = document.getElementById("devicesBox");
+
+// let iotName = document.querySelector(".iotName");
+// let humidity = document.querySelector(".humidity");
+// let temp = document.querySelector(".temp");
+// let weather = document.querySelector(".weather");
 
 const btn = document.querySelector("#getDataBtn");
 btn.addEventListener("click", getData());
 
 async function getData() {
-  const dataFetch = await fetch(herokuURL);
-  let parsedData = await dataFetch.json();
+  const dataFetch = await fetch(fireBaseURL);
+  let parsedDataObj = await dataFetch.json();
+  let parsedData = await parsedDataObj.features;
   console.log(parsedData);
   let dataCount = parsedData.length;
 
   for (let i = 0; i < dataCount; i++) {
     let id = parsedData[i].id;
-    let deviceName = parsedData[i].name;
-    let humidity = parsedData[i].Humidity;
-    let temp = parsedData[i].Temperature;
-    let weather = parsedData[i].Weather;
-    let str = `DeviceName:  ${deviceName}  Humidiy  ${humidity}  Temperature  ${temp}  Weather  ${weather}`;
+    let deviceName = parsedData[i].deviceName;
+    let geometry = parsedData[i].geometry.coordinates;
+    let temp = parsedData[i].temp;
+    let event = parsedData[i].event;
+    let str = `DeviceName:  ${deviceName}  Temperature  ${temp}  Event  ${event}`;
     let randomNum = Math.random();
 
     let row = document.getElementById("deviceRow");
@@ -47,10 +49,10 @@ async function getData() {
     img.src = `https://picsum.photos/200/200?random=${randomNum}`;
     img.classList.add("card-img-top", "w-100", "my-2");
 
-    let h4 = document.createElement("h5");
-    h4.classList.add("card-title", "text-info", "fw-bold", "my-1");
-    let h4Content = document.createTextNode(`${deviceName}`);
-    h4.appendChild(h4Content);
+    let h5 = document.createElement("h5");
+    h5.classList.add("card-title", "text-info", "fw-bold", "my-1");
+    let h5Content = document.createTextNode(`${deviceName}`);
+    h5.appendChild(h5Content);
 
     let p0 = document.createElement("p");
     p0.classList.add("card-text", "fw-light", "my-2");
@@ -59,7 +61,8 @@ async function getData() {
 
     let p1 = document.createElement("p");
     p1.classList.add("card-text", "fw-light", "my-2");
-    let p1Content = document.createTextNode(`Humidiy:  ${humidity}`);
+    console.log(geometry);
+    let p1Content = document.createTextNode(`Geometry:  ${geometry}`);
     p1.appendChild(p1Content);
 
     let p2 = document.createElement("p");
@@ -69,7 +72,7 @@ async function getData() {
 
     let p3 = document.createElement("p");
     p3.classList.add("card-text", "fw-light", "my-2");
-    let p3Content = document.createTextNode(`Weather:  ${weather}`);
+    let p3Content = document.createTextNode(`Event:  ${event}`);
     p3.appendChild(p3Content);
 
     let deleteBtn = document.createElement("a");
@@ -83,7 +86,7 @@ async function getData() {
     deleteBtn.appendChild(aContent);
 
     cardBody.appendChild(img);
-    cardBody.appendChild(h4);
+    cardBody.appendChild(h5);
     cardBody.appendChild(p0);
     cardBody.appendChild(p1);
     cardBody.appendChild(p2);
@@ -94,19 +97,20 @@ async function getData() {
     row.appendChild(col);
   }
 
+  console.log("Loading Data Sucessfully!!!")
   getDeleteBtns();
 }
 
 function getDeleteBtns() {
   const delBtns = document.getElementsByClassName("deleteDevice");
-  console.log(delBtns);
   for (b of delBtns) {
     b.addEventListener("click", async function (e) {
       let delID = e.target.parentElement.children[2].innerText;
-      let numID = parseInt(delID.substr(4, 6));
+      console.log(delID)
+      let numID = parseInt(delID.substr(4, 5));
       console.log(numID);
 
-      let url = `https://iotapinodejs.herokuapp.com/devices/${numID}`;
+      let url = `https://us-central1-iot-cloud-functions-a3398.cloudfunctions.net/post/${numID}`;
 
       await fetch(url, {
         method: "DELETE",
