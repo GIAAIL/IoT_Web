@@ -7,7 +7,7 @@
 The **link** below is the pages for clients !!!
 
 ###Go check it:  
-https://chunyulo-code.github.io/IoT_Web/
+https://giaail.github.io/IoT_Web/
 
 ![Homepage](./assets/images/Demo_01.png)
 ![PostDevice](./assets/images/Demo_02.png)
